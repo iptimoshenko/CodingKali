@@ -368,3 +368,5 @@ pdata.ix['Adj Close', '6/1/2017':, :]
 stacked = pdata.ix[:, '5/30/2012':, :].to_frame()
 # the inverse of to_frame:
 stacked.to_panel()
+
+# test lines
