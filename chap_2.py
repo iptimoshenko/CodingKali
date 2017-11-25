@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib
 from pandas import DataFrame, Series
 import pandas as pd
+import datetime
 
 source_file = open('usagov.txt')
 records = [json.loads(line) for line in source_file] #json.loads(line)
