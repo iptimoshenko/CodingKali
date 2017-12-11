@@ -72,7 +72,7 @@ for i in range(5):
 plt.title("Monthly unemployemnt trends, 1948 - 1952")
 plt.xlabel("Month, integer")
 plt.ylabel("Unemployment rate, percent")
-plt.legend(loc='upper left')
+plt.legend(loc='upper right')
 plt.show()
 
 # When we use plt.plot() and plt.legend(), the Axes.plot() and Axes.legend() methods are called under the hood and
