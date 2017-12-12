@@ -1,0 +1,76 @@
+echo "This is all a dream..." > dream.txt
+
+# to add to file instad of over-writing:
+echo "Wake up!" >> dream.txt
+
+sort < beer.txt
+sort -r < dream.txt  # doesn't work
+
+grep "up" dream.txt beer.txt
+
+echo 'Coffee is almost as good as beer,\nBut I could never drink 99 bottles of it' > coffee.txt
+
+# for a single/any number  unknown character
+grep "beer" beer?/*.txt
+
+ls *.txt
+
+# chaining commands:
+tail -n 10 logs.txt | grep "Error"
+
+# check if 9 occurs in the output of python script:
+python rand.py | grep 9
+
+# cat will print the output
+# executes 2 commands without output being passed between them
+echo "All the beers are gone" >> beer.txt && cat beer.txt
+
+#  use a backslash (\) as an escape character
+echo "\"Get out of here,\" said Neil Armstrong to the moon people." >> famous_quotes.txt
+
+# List all of the files in the current directory (the home directory), including the file names, permissions, formats, and sizes
+ls -l
+
+head -10 *.csv
+
+echo head -1 Hud_2005.csv > combined_hud.csv
+# number of lines in the file
+wc -l Hud_2005.csv
+echo tail -46853 Hud_2005.csv >> combined_hud.csv
+
+grep  '1980-1989' combined_hud.csv | wc -l
+
+##############################################################
+################## csvkit
+csvstack file1.csv file2.csv file3.csv > final.csv
+csvstack -n origin -g 1,2,3 file1.csv file2.csv file3.csv > final.csv
+
+# to display as pretty table
+head -10 final.csv | csvlook
+
+# to show columns:
+csvcut -n Combined_hud.csv
+
+# specific column
+csvcut -c 2 Combined_hud.csv | head -10
+
+csvcut -c 4 Combined_hud.csv | csvstat --max
+csvcut -c 2 Combined_hud.csv | csvstat --nulls
+csvcut Combined_hud.csv | csvstat --mean
+
+# search for -9 in column 2
+csvgrep -c 2 -m -9 Combined_hud.csv
+
+csvgrep -c 2 -m -9 Combined_hud.csv | head -10 | csvlook
+csvgrep -c 2 -m -9 -i Combined_hud.csv > positive_ages_only.csv
+
+
+###################################################
+########## GIT
+mkdir random_numbers
+cd random_numbers
+git init
+
+# shows everything in the folder
+ls -al
+
