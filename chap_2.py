@@ -238,7 +238,7 @@ lesley_like = all_names[mask]
 filtered = top1000[top1000.names.isin(lesley_like)]
 filtered.groupby('names').births.sum()
 
-table = filtered.pivot_table('births', index = 'year', columns = 'sex', aggfunc = 'sum')
+table = filtered.pivot_table('births', index='year', columns = 'sex', aggfunc = 'sum')
 table.tail()
 
 ### plot data split by gender from pivot table
